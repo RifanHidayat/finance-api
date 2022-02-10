@@ -10,7 +10,7 @@ exports.read = async function (req, res) {
     return res.status(200).json({
       code: 200,
       error: false,
-      message: "Successfuly",
+      message: "Sukses",
       data: accounts,
     });
   } catch (e) {
