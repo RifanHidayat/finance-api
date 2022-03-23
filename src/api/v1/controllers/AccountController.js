@@ -14,6 +14,7 @@ exports.store = async function (req, res) {
     let categoryId = req.body.category_id;
     let isActive = req.body.is_active;
     let accountNumnber = req.body.account_number;
+    let companyId = req.body.company_id;
     let tax_id = await model.account
       .create({
         number: number,
@@ -27,6 +28,7 @@ exports.store = async function (req, res) {
         category_id: categoryId,
         is_active: isActive,
         account_number: accountNumnber,
+        company_id: companyId,
         tax_id: 0,
       })
       .then((response) => {
@@ -67,6 +69,7 @@ exports.update = async function (req, res) {
     let categoryId = req.body.category_id;
     let isActive = req.body.is_active;
     let accountNumnber = req.body.account_number;
+    let companyId = req.body.company_id;
     let tax_id = 0;
 
     model.account
@@ -83,6 +86,7 @@ exports.update = async function (req, res) {
           category_id: categoryId,
           is_active: isActive,
           account_number: accountNumnber,
+          company_id: companyId,
           tax_id: 0,
         },
         {

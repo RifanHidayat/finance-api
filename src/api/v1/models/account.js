@@ -19,6 +19,11 @@ module.exports = (sequelize, DataTypes) => {
           name: "account_id",
         },
       });
+      account.hasOne(models.journal_transaction, {
+        foreignKey: {
+          name: "account_id",
+        },
+      });
     }
   }
   account.init(
@@ -33,6 +38,7 @@ module.exports = (sequelize, DataTypes) => {
       balance: DataTypes.INTEGER,
       parent_id: DataTypes.INTEGER,
       category_id: DataTypes.INTEGER,
+      company_id: DataTypes.INTEGER,
       tax_id: DataTypes.INTEGER,
       is_active: DataTypes.INTEGER,
       account_number: DataTypes.STRING,
